@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'debug'
 
 class ApplicationController < ActionController::Base
   PROMOTE_HELPHUB_APP_PAGE = 'http://helphub.ru/download'
@@ -11,6 +12,16 @@ class ApplicationController < ActionController::Base
   protected
 
   def force_show_flash_notice?
+    a = 1
+    b = 2
+    test_value = 3
+
+    puts 'awd'
+    test_value = test_value + 100
+    puts 'enough'
+    test_value *= 10
+    puts 'not enough'
+    test_value
     false
   end
 

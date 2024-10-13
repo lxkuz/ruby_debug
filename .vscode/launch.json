@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      //Start Rails server
+      "name": "Debug Rails",
+      "type": "rdbg",
+      "request": "launch",
+      // "command": "bundle exec rails", #bundle exec rails won't stop in the debugger
+      "command": "bin/rails",
+      "script": "s",
+      "args": ["-b","0.0.0.0"],
+    },
+    {
+      "name": "save_jokes:echo",
+      "type": "rdbg",
+      "request": "launch",
+      "command": "bundle exec",
+      "script": "rake",
+      "args": ["save_jokes:echo"],
+      "askParameters": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Debug current file with rdbg",
+      "request": "launch",
+      "script": "${file}",
+      "args": [],
+      "askParameters": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Run rspec",
+      "request": "launch",
+      "command": "bundle exec rspec",
+      "script": "spec",
+      "args": [],
+      "askParameters": false
+    },
+    {
+      "type": "rdbg",
+      "name": "rspec file",
+      "request": "launch",
+      "command": "bundle exec rspec",
+      "script": "${file}",
+      "args": [],
+      "askParameters": false
+    },
+    {
+      "type": "rdbg",
+      "name": "Attach with rdbg",
+      "request": "attach"
+    }
+  ]
+}
